@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Figtree';
+    src: url(assets/fonts/Figtree-VariableFont_wght.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 600 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url(assets/fonts/Figtree-Italic-VariableFont_wght.ttf) format('truetype');
+    font-style: italic;
+    font-weight: 600 800;
+    font-display: swap;
+}
+
+:root {
+    --clr-primary-hsl: 47, 88%, 63%;
+    --clr-neutral-bright-hsl: 0, 0%, 100%;
+    --clr-neutral-med-hsl: 0, 0%, 50%;
+    --clr-neutral-dark-hsl: 0, 0%, 7%;
+
+    --clr-primary: hsl(var(--clr-primary-hsl));
+    --clr-neutral-bright: hsl(var(--clr-neutral-bright-hsl));
+    --clr-neutral-med: hsl(var(--clr-neutral-med-hsl));
+    --clr-neutral-dark: hsl(var(--clr-neutral-dark-hsl));
+
+    --ff-default: 'Figtree';
+
+    --fw-regular: 600;
+    --fw-bold: 800;
+
+    --fs-p: 16px;
+
+    --border-radius: 10px;
+    --card-padding: 1.25rem;
+
+    --illus-width: 336px;
+}
+
+* {
+    margin: 0;
+    font: inherit;
+}
+
+*,
+*::after, 
+*::before {
+    box-sizing: border-box;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    background-color: var(--clr-primary);
+    display: grid;
+    place-items: center;
+    min-height: 100svh;
+    color: var(--clr-neutral-dark);
+}
+
+.card {
+    max-width: calc(var(--illus-width) + (2 * var(--card-padding)));
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    gap: 1.25rem;
+    background-color: var(--clr-neutral-bright);
+    padding: var(--card-padding);
+    border-radius: calc(var(--border-radius) + 5px);
+    border: 1px solid var(--clr-neutral-dark);
+    box-shadow: 7px 7px var(--clr-neutral-dark);
+    font-family: var(--ff-default);
+}
+
+.illustration {
+    border-radius: var(--border-radius);
+}
+
+.tag-info {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 0.75rem;
+}
+
+.category {
+    border-radius: calc(var(--border-radius) / 3);
+    padding: calc(var(--card-padding) / 3);
+    background-color: var(--clr-primary);
+    width: fit-content;
+    font-weight: var(--fw-bold);
+}
+
+.card-title {
+    font-weight: var(--fw-bold);
+    font-size: calc(var(--fs-p) * 1.5);
+}
+
+.card-description {
+    color: var(--clr-neutral-med);
+}
+
+.profile-info {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profile-name {
+    font-weight: var(--fw-bold);
+}
